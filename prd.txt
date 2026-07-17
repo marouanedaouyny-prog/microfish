@@ -1,0 +1,550 @@
+# PRD.md
+# Project: AI Interview Simulator
+Version: 1.0
+Status: MVP
+Goal: Build an AI-powered interview preparation platform using MiroFish agents that analyzes a user's CV and a target job description, simulates multiple interviewers, and generates actionable feedback with 0-cost infrastructure.
+
+---
+
+# 1. Problem
+
+Job seekers repeatedly apply without knowing:
+
+- which questions they will face
+- weaknesses inside their CV
+- missing skills
+- hiring risks
+- how recruiters perceive them
+
+Current interview tools mostly generate generic questions and lack realistic multi-perspective simulations.
+
+---
+
+# 2. Solution
+
+Build a web platform where users upload:
+
+- CV
+- job description
+
+MiroFish creates AI agents:
+
+1. HR interviewer
+2. Technical interviewer
+3. Team manager
+4. CEO
+5. Critical interviewer
+
+Agents independently analyze the candidate and interact together.
+
+System outputs:
+
+- expected interview questions
+- CV weak points
+- missing skills
+- confidence score
+- recruiter concerns
+- improvement plan
+- interview simulation
+
+---
+
+# 3. Target Users
+
+Primary:
+
+- students
+- junior developers
+- fresh graduates
+- remote workers
+- freelancers
+
+Secondary:
+
+- career coaches
+- bootcamp students
+- recruiters
+
+---
+
+# 4. Revenue Model
+
+Free Plan:
+
+- 3 interview simulations
+- limited report
+
+Premium:
+
+5$
+
+Includes:
+
+- full report
+- PDF export
+- unlimited simulations
+- interview replay
+
+Professional:
+
+15$/month
+
+Includes:
+
+- unlimited reports
+- advanced analytics
+- interview history
+- custom roles
+
+---
+
+# 5. MVP Scope
+
+Must have:
+
+Authentication
+
+CV upload
+
+Job description input
+
+Agent simulation
+
+Question generation
+
+Weakness analysis
+
+Score system
+
+PDF report generation
+
+Dashboard
+
+History page
+
+Payment integration placeholder
+
+Nice to have later:
+
+Voice interviews
+
+Live mock interview
+
+Video interview analysis
+
+LinkedIn import
+
+Multi-language support
+
+---
+
+# 6. User Flow
+
+Homepage
+
+↓
+
+Sign up/Login
+
+↓
+
+Dashboard
+
+↓
+
+Upload CV
+
+↓
+
+Paste Job Description
+
+↓
+
+Start Simulation
+
+↓
+
+Backend extracts data
+
+↓
+
+MiroFish creates agents
+
+↓
+
+Agents discuss candidate
+
+↓
+
+Results generated
+
+↓
+
+User receives report
+
+---
+
+# 7. Pages
+
+## Landing Page
+
+Sections:
+
+Hero:
+
+"Prepare smarter with AI interview simulation"
+
+Features
+
+How it works
+
+Pricing
+
+Testimonials
+
+CTA
+
+---
+
+## Dashboard
+
+Contains:
+
+Recent simulations
+
+Create new simulation
+
+Statistics
+
+Account details
+
+---
+
+## Upload Page
+
+Inputs:
+
+CV Upload
+
+Accepted:
+
+- PDF
+- DOCX
+
+Job description text area
+
+Start button
+
+---
+
+## Simulation Page
+
+Live display:
+
+HR Agent thinking
+
+Technical Agent thinking
+
+Manager feedback
+
+Progress bar
+
+---
+
+## Results Page
+
+Sections:
+
+Overall score
+
+Expected questions
+
+Weaknesses
+
+Missing skills
+
+Recommended learning
+
+Agent comments
+
+Export PDF button
+
+---
+
+## Profile Page
+
+Contains:
+
+Name
+
+Email
+
+History
+
+Subscription status
+
+---
+
+# 8. AI Agent Design
+
+Agent 1:
+
+Name: HR
+
+Purpose:
+
+- communication analysis
+- soft skills
+
+---
+
+Agent 2:
+
+Name: Technical Interviewer
+
+Purpose:
+
+- technical knowledge
+
+---
+
+Agent 3:
+
+Name: Team Manager
+
+Purpose:
+
+- culture fit
+
+---
+
+Agent 4:
+
+Name: CEO
+
+Purpose:
+
+- strategic value
+
+---
+
+Agent 5:
+
+Name: Critical Reviewer
+
+Purpose:
+
+- challenge assumptions
+
+---
+
+# 9. Technical Architecture
+
+Frontend:
+
+Next.js
+
+UI:
+
+TailwindCSS
+
+Components:
+
+shadcn/ui
+
+Backend:
+
+Next.js API routes
+
+Database:
+
+Supabase Free
+
+Authentication:
+
+Clerk Free
+
+AI:
+
+MiroFish
+
+LLM:
+
+Gemini API Free Tier
+
+PDF:
+
+react-pdf
+
+Storage:
+
+Supabase Storage
+
+Hosting:
+
+Vercel Free
+
+---
+
+# 10. Database Schema
+
+Users
+
+fields:
+
+id
+email
+name
+created_at
+
+---
+
+Simulations
+
+fields:
+
+id
+user_id
+cv_url
+job_description
+score
+created_at
+
+---
+
+Reports
+
+fields:
+
+id
+simulation_id
+questions
+weaknesses
+skills_missing
+recommendations
+
+---
+
+# 11. API Routes
+
+POST:
+
+/api/upload-cv
+
+POST:
+
+/api/start-simulation
+
+POST:
+
+/api/generate-report
+
+GET:
+
+/api/history
+
+GET:
+
+/api/report/:id
+
+---
+
+# 12. Prompt Architecture
+
+System Prompt:
+
+"You are an interview simulation engine composed of multiple independent agents."
+
+HR Prompt:
+
+"Act as an HR recruiter evaluating communication and soft skills."
+
+Technical Prompt:
+
+"Act as a technical interviewer evaluating technical capabilities."
+
+Manager Prompt:
+
+"Act as a hiring manager evaluating collaboration."
+
+CEO Prompt:
+
+"Act as a CEO evaluating long-term value."
+
+Critical Prompt:
+
+"Challenge every assumption and identify hidden risks."
+
+---
+
+# 13. Design Style
+
+Theme:
+
+Dark modern
+
+Colors:
+
+Primary:
+#6366F1
+
+Background:
+#0F172A
+
+Cards:
+#1E293B
+
+Radius:
+
+large
+
+Animations:
+
+smooth
+
+Design inspiration:
+
+Linear
+Stripe
+Perplexity
+Lovable
+
+---
+
+# 14. Success Metrics
+
+Target Month 1:
+
+100 users
+
+Target Month 2:
+
+500 users
+
+Target Month 3:
+
+1000 users
+
+Conversion target:
+
+5%
+
+---
+
+# 15. Future Expansion
+
+AI voice interviewer
+
+Video analysis
+
+Live interview rooms
+
+Recruiter marketplace
+
+Career roadmap AI
+
+Mobile app
+
+---
+
+# End PRD

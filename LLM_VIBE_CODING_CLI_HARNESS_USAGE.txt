@@ -1,0 +1,23 @@
+﻿LLM Vibe Coding CLI - HARNESS Usage
+
+1) Open the target project folder:
+cd C:\path\to\other-project
+
+2) Copy HARNESS into that project:
+Copy-Item C:\Users\HP\HARNESS.ps1 .\
+
+3) Run the harness:
+.\HARNESS.ps1 -Goal "Build and finish this project"
+
+If the project is not a git repo yet:
+.\HARNESS.ps1 -Goal "Build and finish this project" -InitGitIfNeeded
+
+Optional flags:
+- Select providers:
+.\HARNESS.ps1 -Goal "..." -Providers claude,codex,kimi
+
+- Dry run (preview only):
+.\HARNESS.ps1 -Goal "..." -DryRun
+
+- Autonomous mode (high risk):
+.\HARNESS.ps1 -Goal "..." -UnsafeAutoApprove
